@@ -33,4 +33,7 @@ protected:
 
 	void MoveUp(float InputVector);
 	void MoveRight(float InputVector);
+	
+	FVector FixedCameraLocation;
+	FRotator FixedCameraRotation;
 };

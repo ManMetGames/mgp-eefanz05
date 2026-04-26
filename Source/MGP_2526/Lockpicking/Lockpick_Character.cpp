@@ -12,12 +12,16 @@ ALockpick_Character::ALockpick_Character()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Pick Cam"));
 	Camera->SetupAttachment(RootComponent);
+	
 }
 
 // Called when the game starts or when spawned
 void ALockpick_Character::BeginPlay()
 {
 	Super::BeginPlay();
+	// In BeginPlay
+	FixedCameraLocation = Camera->GetComponentLocation();
+	FixedCameraRotation = Camera->GetComponentRotation();
 	
 }
 
@@ -25,6 +29,8 @@ void ALockpick_Character::BeginPlay()
 void ALockpick_Character::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	Camera->SetWorldLocation(FixedCameraLocation);
+	Camera->SetWorldRotation(FixedCameraRotation);
 
 }
 
