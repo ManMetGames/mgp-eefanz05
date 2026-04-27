@@ -19,7 +19,6 @@ ALockpick_Character::ALockpick_Character()
 void ALockpick_Character::BeginPlay()
 {
 	Super::BeginPlay();
-	// In BeginPlay
 	FixedCameraLocation = Camera->GetComponentLocation();
 	FixedCameraRotation = Camera->GetComponentRotation();
 	
