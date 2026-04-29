@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Lockpicking/Lockpick_Character.h"
 #include "Camera/CameraComponent.h"
 
@@ -12,7 +12,7 @@ ALockpick_Character::ALockpick_Character()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Pick Cam"));
 	Camera->SetupAttachment(RootComponent);
-	
+
 }
 
 // Called when the game starts or when spawned
@@ -30,7 +30,10 @@ void ALockpick_Character::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	Camera->SetWorldLocation(FixedCameraLocation);
 	Camera->SetWorldRotation(FixedCameraRotation);
-
+	if (GetLastMovementInputVector().IsNearlyZero())
+	{
+		GetCharacterMovement()->StopMovementImmediately();
+	}
 }
 
 // Called to bind functionality to input
