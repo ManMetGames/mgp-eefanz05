@@ -20,12 +20,15 @@ protected:
 	virtual void BeginPlay() override;
 	
 	class USceneComponent* Root;
-	UPROPERTY(EditAnywhere)
-	class UBoxComponent* pinslot;
+	
+	
 
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
+	
+	
 };
