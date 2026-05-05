@@ -16,7 +16,10 @@ class MGP_2526_API AOntriggerEnter : public ATriggerBox
 
 public:
 	AOntriggerEnter();
-
+	UPROPERTY(EditAnywhere)
+	AActor* Door;
+	UPROPERTY()
+	int pinsPushed;
 	UFUNCTION()
 	void triggerEntered(AActor*overlappedActor , AActor*otherActor);
 protected:
