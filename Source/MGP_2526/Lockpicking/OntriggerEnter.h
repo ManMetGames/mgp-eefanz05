@@ -18,6 +18,7 @@ public:
 	AOntriggerEnter();
 	UPROPERTY(EditAnywhere)
 	AActor* Door;
+	
 	UPROPERTY()
 	int pinsPushed;
 	UFUNCTION()

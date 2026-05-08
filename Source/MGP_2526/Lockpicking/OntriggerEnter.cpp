@@ -32,11 +32,14 @@ void AOntriggerEnter::triggerEntered(AActor* overlappedActor, AActor* otherActor
              pinsPushed = pinsPushed + 1;
             if (pinsPushed>=4) 
             {
+               
                 if (Door)
                 {
                     Door->Destroy();
                     Door = nullptr;
+
                 }
+                
             }
 
 
